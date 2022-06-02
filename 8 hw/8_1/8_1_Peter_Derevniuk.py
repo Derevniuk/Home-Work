@@ -1,12 +1,11 @@
 import re
 
-with open("article.txt", "r") as f:
-    to_reading = f.read()
-
 
 def longest_words(file: str) -> str:
-    s = re.sub("[,|.]", "", file)
+    with open(file, "r") as f:
+        to_reading = f.read()
+    s = re.sub("[,|.]", "", to_reading)
     return max(s.split(), key=len)
 
 
-print(longest_words(to_reading))
+print(longest_words('article.txt'))
