@@ -10,7 +10,7 @@ class Car:
         print("Aвтомобиль заведен")
 
     @staticmethod
-    def stop_car(self):
+    def stop_car():
         print("Автомобиль заглушен")
 
     def year_car(self, year):
@@ -28,4 +28,5 @@ class Car:
 
 audi = Car('Green', 'passenger', 2021)
 audi.color = 'Blue'
+audi.stop_car()
 print(audi)
