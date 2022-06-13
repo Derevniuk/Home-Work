@@ -6,7 +6,7 @@ class Car:
         self.year = year
 
     @staticmethod
-    def start_car(self):
+    def start_car():
         print("Aвтомобиль заведен")
 
     @staticmethod
