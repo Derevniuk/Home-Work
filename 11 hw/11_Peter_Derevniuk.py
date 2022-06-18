@@ -11,31 +11,35 @@ class User:
         self.gender = gender
         self.profession = profession
 
+    @property
     def get_email(self):
-        return f'{str(self.name).lower()}.{str(self.surname).lower()}@gmail.com'
+        email = f'{self.name.lower()}.{self.surname.lower()}@gmail.com'
+        return email
 
+    @property
     def birth_year(self):
-        return datetime.datetime.now().year - self.age
+        birth_year = int(datetime.datetime.now().year) - int(self.age)
+        return birth_year
 
-    def add_doctor(self):
-        self.profession = 'doctor'
-        return self.profession
+    @staticmethod
+    def policeman(cls):
+        policeman_1 = User('Bob', 'Resot', 20, 'Div', 'men', 'policeman')
+        return policeman_1
 
-    def add_policeman(self):
-        self.profession = 'policeman'
-        return self.profession
+    @staticmethod
+    def doctor(cls):
+        doctor_1 = User('Bob', 'Resot', 20, 'Div', 'men', 'policeman')
+        return doctor_1
 
-    def add_teacher(self):
-        self.profession = 'teacher'
-        return self.profession
+    @staticmethod
+    def teacher(cls):
+        teacher_1 = User('Bob', 'Resot', 20, 'Div', 'men', 'teacher')
+        return teacher_1
 
     def __str__(self):
-        return f'{self.name}, {self.surname}, {self.profession}, {self.age}, {self.country}, {self.get_email()}, {self.birth_year()}'
+        return f'{self.profession}, {self.name}'
 
 
-a = User('Pavel', 'Spinok', 26, 'Kbr', 'men', 'polisman')
-print(a.get_email())
-print(a.birth_year())
-print(a)
-a.add_teacher()
-print(a)
+a = User('Peter', 'Derevniuk', 28, 'Kbr', 'men', 'doctor')
+
+print(a.teacher(User))
