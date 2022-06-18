@@ -21,17 +21,17 @@ class User:
         birth_year = int(datetime.datetime.now().year) - int(self.age)
         return birth_year
 
-    @staticmethod
+    @classmethod
     def policeman(cls):
         policeman_1 = User('Bob', 'Resot', 20, 'Div', 'men', 'policeman')
         return policeman_1
 
-    @staticmethod
+    @classmethod
     def doctor(cls):
-        doctor_1 = User('Bob', 'Resot', 20, 'Div', 'men', 'policeman')
+        doctor_1 = User('Bob', 'Resot', 20, 'Div', 'men', 'doctor')
         return doctor_1
 
-    @staticmethod
+    @classmethod
     def teacher(cls):
         teacher_1 = User('Bob', 'Resot', 20, 'Div', 'men', 'teacher')
         return teacher_1
@@ -40,6 +40,6 @@ class User:
         return f'{self.profession}, {self.name}'
 
 
-a = User('Peter', 'Derevniuk', 28, 'Kbr', 'men', 'doctor')
+a = User.policeman()
 
-print(a.teacher(User))
+print(a)
